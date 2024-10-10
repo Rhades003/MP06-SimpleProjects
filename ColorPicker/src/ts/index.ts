@@ -1,8 +1,7 @@
-let btn:HTMLElement = document.getElementById("Color")!;
+let botones:HTMLCollectionOf<HTMLButtonElement> = document.getElementsByTagName("button");
 
-function changeColor(){
-    let fondo:HTMLElement = document.getElementsByTagName("body")[0]!;
+    for(let i = 0; i < botones.length; i++) botones[i].addEventListener("click", () => changeColor(botones[i].getAttribute("id")?.toString()!));
 
-    fondo.style.backgroundColor = "red";
-
+function changeColor(id:string){
+    document.body.style.backgroundColor = id;     
 }
