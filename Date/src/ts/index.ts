@@ -30,16 +30,19 @@ function modificarBom() {
     let input:HTMLInputElement = document.getElementById("nombre")! as HTMLInputElement;
     //Con otra variable number pillamos el value del input que es lo que interesa con el "as unknown as number" para que podamos pasarlo a number
     let inputValue:number = (input.value) as unknown as number;
+    let inputt:number = (document.getElementById("e") as HTMLInputElement).value as unknown as number;
+    
+    console.log(inputt+2);
     let color;
     let mensaje = document.createElement("h1");
     for(let i = 0; i<inputValue; i++){
         color = Math.floor(Math.random()*16777215).toString(16);
         //
-        let mipestaña:Window = window.open("","", "width=300px, height=300px,backgroundColor=") as Window;
+        let mipestaña:Window = window.open("","", "width=300px, height=300px") as Window;
         mipestaña.document.write(i+"");
         mipestaña.document.body.style.backgroundColor = color;
         
-        
+        let pestaña2:Window = window.open("", "", "width=300px, heigh=300px ") as Window;
     
     }
 }

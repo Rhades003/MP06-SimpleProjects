@@ -1,0 +1,17 @@
+body {
+    transition: background-color 0.5s ease;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    margin: 0;
+}
+
+#Left{
+height: 60.5em;
+}
+
+#Rigth {
+    justify-content: center; 
+    align-items: center;    
+    height: 100vh;          
+}
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <title>Carrito</title>
+ 
+</head>
+
+<body>
+
+  <div id="Left">
+      <label for="category">Category</label>
+      <input type="text" name="category" id="category">
+      <button onclick="addCategory()">Send Category</button>
+      <button onclick="showCategories()">Show Categories</button>
+
+    <div id="categoryList"></div>
+  </div>
+
+  <div id="Rigth">
+    <label for="product">Product</label>
+      <input type="text" name="product" id="product">
+      <button onclick="addProduct()">Send Product</button>
+      <button onclick="deleteProduct()">Delete Product</button>
+      <button onclick="showProducts()">Show Product</button>
+
+    <div id="productList"></div>
+  </div>
+  
+  <script src="built/index.js"></script>
+</body>
+</html>
