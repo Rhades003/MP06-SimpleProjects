@@ -3,15 +3,22 @@
 <head>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title>Funcions</title>
+        <title>Pokemons</title>
         <script src="./built/index.js"></script>
       </head>
 </head>
 <body onload="generate()">
+    <ol id="trainerList">
+        Lista de entrendadores
+    </ol>
     <form action="" method="get">
-        <input type="text" id="input1">
-        <input type="text" id="input2">
-        <button onclick="addEntities(document.getElementById().nodeValue)">Enviar</button>
+        <input type="text" id="input1" name="input1" required>
+        <button onclick="addEntities()">Enviar</button>
     </form>
+
+    <div id="lists">
+
+    </div>
+    
 </body>
 </html>

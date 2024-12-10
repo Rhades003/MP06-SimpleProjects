@@ -1,63 +1,45 @@
 "use strict";
 let clientsMap = new Map();
+let pokemonMap = new Map();
+let itemList = [];
 function generate() {
     clientsMap.set("Ash", "pierdeligas@gmaill.com");
     clientsMap.set("Lionel", "elcampeon@gmail.com");
     clientsMap.set("Red", "...@gmail.com");
+    clientsMap.set("Tobias", "muchoslegendarios@gmail.com");
     showClients();
 }
 const checkEmail = (mail) => (mail.substring(mail.length - 10, mail.length) == "@gmail.com") ? true : false;
 function showClients() {
+    let trainerList = document.getElementById("trainerList");
     for (let client of clientsMap.entries()) {
-        if (checkEmail(client[1]))
-            console.log(client);
+        if (checkEmail(client[1])) {
+            let trainer = document.createElement('li');
+            trainer.innerHTML = client.toString().replace(",", " ");
+            trainerList.appendChild(trainer);
+        }
     }
 }
 function addEntities(input1, input2) {
-    console.log("input1: " + input1 + " input2: " + input2);
-}
-function classificarParaules(paraules) {
-    paraules.forEach((paraula) => {
-        if (paraula.length > 5)
-            console.log(paraula);
-    });
-}
-function analitzarTemperatures(...temperatures) {
-    let tempMax = 0;
-    let tempMin = 10000000;
-    let allTemps = 0;
-    let i = 0;
-    temperatures.forEach((temperatura) => {
-        if (temperatura > tempMax)
-            tempMax = temperatura;
-        if (temperatura < tempMin)
-            tempMin = temperatura;
-        allTemps = allTemps + temperatura;
-    });
-    let tabla = document.getElementById("taulaTemperatures");
-    let fila = document.createElement("tr");
-    let cell = document.createElement("th");
-    cell.textContent = (allTemps / temperatures.length).toFixed(2).toString();
-    fila.appendChild(cell);
-    let cell2 = document.createElement("th");
-    cell2.textContent = tempMax.toString();
-    fila.appendChild(cell2);
-    let cell3 = document.createElement("th");
-    cell3.textContent = tempMin.toString();
-    fila.appendChild(cell3);
-    tabla.appendChild(fila);
-    console.log((allTemps / temperatures.length).toFixed(2));
-    console.log(tempMax);
-    console.log(tempMin);
-}
-function enviarMissatges(emailOrPhone, content, end) {
-    if (typeof emailOrPhone == "string") {
-        console.log(end ? "Missatge enviat a l'email, contingut: " + end + " " + content : "Missatge enviat a l'email, contingut: " + content);
+    if (input1.includes(',')) {
+        let inputArray = input1.split(",", 2);
+        pokemonMap.set(inputArray[0], inputArray[1]);
     }
-    else if (typeof emailOrPhone == "number" && emailOrPhone.toString().length == 9) {
-        alert(end ? "Missatge enviat a l'email, contingut: " + end + " " + content : "Missatge enviat al telèfon, contingut: " + content);
+    else if (input2)
+        pokemonMap.set(input1, input2);
+    else
+        itemList.push(input1);
+}
+function printLists(input) {
+    let divLists = document.getElementById('lists');
+    divLists.innerHTML = "";
+    if (input === "item") {
+        itemList.forEach(item => {
+        });
+        //divLists.appendChild();
+    }
+    else if (input === "pokemon") {
     }
     else {
-        console.log("L'email no té un format vàlid.");
     }
 }
