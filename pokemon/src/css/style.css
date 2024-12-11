@@ -1,0 +1,91 @@
+#content {
+    margin: 0 auto;
+    background-color: #eb4242;
+    width: 1000px;
+    padding: 2%;
+    border-radius: 15px;
+    border: solid 3px #b61414;
+    display: none;
+    grid-template-columns: auto auto;
+}
+button {
+    border-radius: 20px;
+    margin: 10px;
+}
+#listItem {
+    background-color: green;
+    color: #ffffff;
+}
+#listPokemon {
+    background-color: rgb(10, 2, 126);
+    color: #ffffff;
+}
+#listAll {
+    background-color: rgb(94, 5, 5);
+    color: #ffffff;
+}
+#grid {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#lists {
+    width: 300px;
+    background-color: rgb(78, 78, 212);
+    margin: 2%;
+    padding: 1%;
+    border-radius: 15px;
+}
+#screen {
+    background-color: black;
+    color: green;
+    font-family: monospace;
+    padding: 2%;
+    border-radius: 15px;
+    width: 500px;
+}
+
+.comentario {
+    color: green;
+    font-family: monospace;
+}
+
+
+#pokeball {
+    border-radius: 50%;
+    border: solid 3px black;
+    height: 600px;
+    width: 600px;
+    background: linear-gradient(#b61414 50%, #ffffff 50%);
+    margin: 15% auto; 
+    position: relative; 
+}
+
+#buttonPokeball {
+    border-radius: 50%;
+    border: solid 3px black;
+    background-color: black;
+    height: 150px;
+    width: 150px;
+    margin: 38.5%;
+    position: relative;
+    z-index: 2; 
+}
+
+#buttonWhite {
+    border-radius: 50%;
+    border: solid 3px rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    height: 90px;
+    width: 90px;
+    position: absolute; 
+    z-index: 3; 
+    margin: 17.5%;
+}
+
+#linePokeball {
+    border: solid 9px black;
+    width: 585px;
+    position: absolute;
+    transform: translateY(-330px);
+    z-index: 1; 
+}

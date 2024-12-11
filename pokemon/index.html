@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>Pokemons</title>
+        <link rel="stylesheet" href="./src/css/style.css">
         <script src="./built/index.js"></script>
-      </head>
+    </head>
 </head>
+
 <body onload="generate()">
-    <ol id="trainerList">
-        Lista de entrendadores
-    </ol>
-    <form action="" method="get">
-        <input type="text" id="input1" name="input1" required>
-        <button onclick="addEntities()">Enviar</button>
-    </form>
+    <h1>Pokedex/Itemdex</h1>
+    <div id="content">
+        <div id="grid">
+            <div id="lists">
+            </div>
+            <div id="screenButtons">
+                <div id="screen">
+                    <h3>Lista de entrendadores</h3>
+                    <ol id="trainerList">
 
-    <div id="lists">
-
+                    </ol>
+                    <form action="" method="get" onsubmit="return false;">
+                        <p class="comentario">//Si quieres añadir un item el input es ej: (Master Ball:string)<br>
+                            //Si quieres añadir un pokemon el input es ej(0448:string, Lucario:string)</p>
+                        <input type="text" id="input1" name="input1" required>
+                        <button onclick="addEntities()">Enviar</button>
+                    </form>
+                </div>
+                <button id="listItem" onclick="printLists('item')">Listar Items</button>
+                <button id="listPokemon" onclick="printLists('pokemon')">Listar Pokemon</button>
+                <button id="listAll" onclick="printLists('')">Listar Ambos</button>
+            </div>
+        </div>
     </div>
-    
+
+    <div id="pokeball">
+        <div id="buttonPokeball">
+            <div id="buttonWhite" onclick="showContent()"></div>
+        </div>
+        <div id="linePokeball"></div>
+    </div>
 </body>
+
 </html>
