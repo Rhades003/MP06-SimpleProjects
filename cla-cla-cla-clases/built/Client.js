@@ -1,8 +1,23 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+/*
+import { Order } from './Order';
+
 class Client {
-    constructor() {
-        this.name = "";
-        this.surname = "";
+    public name:string;
+    public surname:string;
+    public order:Order;
+    
+    constructor(name:string, surname:string, order:Order){
+        this.name = name;
+        this.surname = name;
+        this.order = order;
     }
 }
+
+export { Client };
+
+
+function generate() {
+    const client = new Client("Ruben", "Julian", new Order("pasta"));
+}
+*/ 
