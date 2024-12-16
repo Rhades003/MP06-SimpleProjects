@@ -12,7 +12,11 @@
 </head>
 
 <body onload="generate()">
-    
+    <form action="addPlat" method="post" onsubmit="return false;">
+        <input type="text" name="name">
+        <input type="number" name="price">
+        <button id="addPlat" onclick="addPlat()">Añadir plat</button>
+    </form>
 </body>
 
 </html>
