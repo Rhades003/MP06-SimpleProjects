@@ -40,6 +40,9 @@ function addPlat(){
     let priceInput:HTMLInputElement = document.getElementById("priceInput") as HTMLInputElement;
     let price = priceInput.valueAsNumber;
     restaurant.plats.set(name, price);
+    for (let plat of restaurant.plats.entries()) {
+    console.log(plat[0]+" "+plat[1])
+    }
     showPepe(restaurant);
 }
 
@@ -50,7 +53,7 @@ class Client {
     
     constructor(name:string, surname:string, order:Order){
         this.name = name;
-        this.surname = name;
+        this.surname = surname;
         this.order = order;
     }
 }

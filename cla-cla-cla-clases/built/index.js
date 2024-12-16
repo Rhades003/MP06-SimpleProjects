@@ -38,12 +38,15 @@ function addPlat() {
     let priceInput = document.getElementById("priceInput");
     let price = priceInput.valueAsNumber;
     restaurant.plats.set(name, price);
+    for (let plat of restaurant.plats.entries()) {
+        console.log(plat[0] + " " + plat[1]);
+    }
     showPepe(restaurant);
 }
 class Client {
     constructor(name, surname, order) {
         this.name = name;
-        this.surname = name;
+        this.surname = surname;
         this.order = order;
     }
 }
