@@ -10,15 +10,21 @@ const restaurant = {
         ["Hamburguesa", 23]
     ]),
 };
+const clientList:Client[] = [];
+
 function showPepe(restaurant?:any){
     if(restaurant){
+        let divMenu:HTMLDivElement = document.getElementById("menu") as HTMLDivElement;
+        while (divMenu.firstChild) {
+            divMenu.removeChild(divMenu.firstChild);
+        }
         let name:HTMLHeadingElement = document.createElement("h2");
         name.innerText = restaurant.name;
-        document.body.appendChild(name);
+        divMenu.appendChild(name);
 
         let ubi:HTMLParagraphElement = document.createElement("p");
         ubi.innerText = restaurant.ubi;
-        document.body.appendChild(ubi);
+        divMenu.appendChild(ubi);
 
         let plats:HTMLUListElement = document.createElement("ul");
         for (let plat of restaurant.plats.entries()) {
@@ -26,7 +32,8 @@ function showPepe(restaurant?:any){
             platLi.innerText = (plat[0]+": "+plat[1]+"€");
             plats.appendChild(platLi); 
         }
-        document.body.appendChild(plats);
+        divMenu.appendChild(plats);
+        document.body.appendChild(divMenu);
     }
     else {
         let pepe:HTMLParagraphElement = document.createElement("p");
@@ -34,8 +41,28 @@ function showPepe(restaurant?:any){
         document.body.appendChild(pepe);
     } 
 }
+function showClients() {
+    let clientDiv:HTMLDivElement = document.getElementById("vistaClients") as HTMLDivElement;
+    while (clientDiv.firstChild) {
+        clientDiv.removeChild(clientDiv.firstChild);
+    }
+    clientList.forEach(client => {
+        let name:HTMLParagraphElement = document.createElement("p");
+        let surname:HTMLParagraphElement = document.createElement("p");
+        let br:HTMLBRElement = document.createElement("br");
+
+        name.innerHTML = client.name;
+        surname.innerHTML = client.surname;
+
+        clientDiv.appendChild(name);
+        clientDiv.appendChild(surname);
+        clientDiv.appendChild(br);
+
+        document.body.appendChild(clientDiv);
+    });
+}
 function addPlat(){
-    let nameInput:HTMLInputElement = document.getElementById("nameInput") as HTMLInputElement;
+    let nameInput:HTMLInputElement = document.getElementById("namePlatInput") as HTMLInputElement;
     let name:string = nameInput.value;
     let priceInput:HTMLInputElement = document.getElementById("priceInput") as HTMLInputElement;
     let price = priceInput.valueAsNumber;
@@ -45,16 +72,35 @@ function addPlat(){
     }
     showPepe(restaurant);
 }
+function addClient(){
+    let nameInput:HTMLInputElement = document.getElementById("nameClientInput") as HTMLInputElement;
+    let name:string = nameInput.value;
+    let surnameInput:HTMLInputElement = document.getElementById("surnameInput") as HTMLInputElement;
+    let surname = surnameInput.value;
+    let dniInput:HTMLInputElement = document.getElementById("dniInput") as HTMLInputElement;
+    let dni = dniInput.value;
+    let cardInput:HTMLInputElement = document.getElementById("cardInput") as HTMLInputElement;
+    let card = cardInput.value;
+
+    let client = new Client(name, surname, dni, card);
+    clientList.push(client);
+}
 
 class Client {
     public name:string;
     public surname:string;
-    public order:Order;
-    
-    constructor(name:string, surname:string, order:Order){
+    public order:Order[] = [];
+    protected dni:string;
+    protected card:string;
+    constructor(name:string, surname:string, dni:string, card:string){
         this.name = name;
         this.surname = surname;
-        this.order = order;
+        this.dni = dni;
+        this.card = card;
+    }
+
+    addOrder(order:Order){
+        this.order.push(order);
     }
 }
 class Order {
@@ -69,8 +115,8 @@ class Order {
 }
 
 function generate() {
-    const client = new Client("Ruben", "Julian", new Order("Pasta"));
-    const client2 = new Client("Ruben", "Julian", new Order("Hamburguesa"));
+    const client = new Client("Ruben", "Julian", "45679087X", "5765476547675");
+    const client2 = new Client("Ruben2", "Julian", "45679087X", "5765476547675");
     console.log(client);
     console.log(client2);
 
