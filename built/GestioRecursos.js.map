@@ -1,0 +1,1 @@
+{"version":3,"file":"GestioRecursos.js","sourceRoot":"","sources":["../Ditto/src/ts/GestioRecursos.ts"],"names":[],"mappings":"AACA,MAAM,CAAC,OAAO,OAAO,cAAc;IAAnC;QAGI,kBAAa,GAAQ,EAAE,CAAC;IAU5B,CAAC;IARG,cAAc,CAA2C,OAAS;QAC9D,IAAI,CAAC,aAAa,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IACrC,CAAC;IAED,eAAe;QACX,OAAO,EAAE,CAAC;IAEd,CAAC;CACJ"}

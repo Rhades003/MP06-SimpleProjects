@@ -123,4 +123,3 @@ function generate() {
     showPepe(restaurant);
     
 }
-
