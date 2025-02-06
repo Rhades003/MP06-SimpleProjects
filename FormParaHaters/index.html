@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,92 @@
     <script type="module" src="./dist/index.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <div class="container">
-        <form action="./index.ts" method="get">
-            <label for="shiled">Quien eres?</label> <br>
-            <input type="text" name="whoIsWho" placeholder="Un hater que quiere criticar el super programa del fuchibol"> <br><br>
-            <label for="shiled">Imagen para representar X escudo (si tienes):</label> <br>
-            <input type="file" name="shield"> <br><br>
-            <label for="">Que más quieres ver (uno o más):</label> <br>
-            <input type="checkbox" name="nicaraguaLeague">
-            <label for="nicaraguaLeague">Liga de nicaragua</label><br>
-            <input type="checkbox" name="IE2">
-            <label for="IE2">Liga de Inazuma Eleven Ventisca.E/Tormenta.F</label><br>
-            <input type="checkbox" name="WDT">
-            <label for="">La pelea de los perros salvajes</label><br><br>
-            <label for="colorFav">Color que quieras que añada para futuras features</label><br>
-            <input type="color" name="" id=""><br><br>
-            <label for="responseText">Otros comentarios que veas super importante comentar</label>
-            <input type="text" name="responseText" readonly><br><br>
-            <section>
-                <option value="aaa"></option>
-            </section>
-        </form>
+        <img src="./resources/drink.webp">
+        <form action="./destinatario.html" method="get" id="superForm">
+            <fieldset>
+                <legend>Apartado super identificatorio</legend>
+                <label for="shiled">Quien eres?</label>
+                <input type="text" name="whoIsWho" required
+                    placeholder="Un hater que quiere criticar el super programa del fuchibol">
+            </fieldset>
 
+            <fieldset>
+                <legend>NO contenido sexual o explicito :)</legend>
+                <label for="shiled">Imagen para representar X escudo (si tienes):</label>
+                <input type="file" name="shield">
+            </fieldset>
+
+            <fieldset>
+                <legend>Elige lo que mas te rente un sabado noche</legend>
+                <label for="">Que más quieres ver (uno o más):</label>
+
+                <input type="checkbox" name="nicaraguaLeague">
+                <label for="nicaraguaLeague">Liga de nicaragua</label>
+
+                <input type="checkbox" name="IE2">
+                <label for="IE2">Liga de Inazuma Eleven Ventisca.E/Tormenta.F</label>
+
+                <input type="checkbox" name="WDT">
+                <label for="">La pelea de los perros salvajes</label>
+            </fieldset>
+            <fieldset>
+                <legend>Cualquiera menos el amarillo</legend>
+                <label for="colorFav">Color que quieras que añada para futuras features</label>
+                <input type="color" name="" id="">
+            </fieldset>
+            <fieldset>
+                <legend>¡Ánimo tu opinión importa!</legend>
+                <label for="responseText">Otros comentarios que veas super importante comentar</label>
+                <input type="text" name="responseText" readonly autofocus>
+            </fieldset>
+            <fieldset>
+                <legend>Que será que misterios habrá</legend>
+                <input type="hidden" name="easterEgg">
+            </fieldset>
+            <fieldset>
+                <legend>O el esquizo o el vaivenes</legend>
+                <label for="fuego_hielo">Elige:</label>
+                <select name="select">
+                    <option value="shawn">Shawn Frost</option>
+                    <option value="axel">Axel Blaze</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Cualquiera menos Darren porfa</legend>
+                <label for="personaje-fav"> Tu personaje fav:</label>
+                <input list="personaje-fav" id="personaje-fav-input" name="personaje-fav" />
+                <datalist id="personaje-fav">
+                    <option value="Shawn Frost"></option>
+                    <option value="Marc Evans"></option>
+                    <option value="Jude Sharp"></option>
+                    <option value="Axel Blaze"></option>
+                </datalist>
+            </fieldset>
+            <!-- La diferencia entre el datalist y el select es queel primero sus opciones solo 
+            son recomendaciones, el select si que te obliga a poner una de las opciones. -->
+            <fieldset>
+                <legend>Opinion de la enquesta</legend>
+                <label for="like">Te ha gustado la encuesta?(en binario)</label>
+                <input type="number" name="like" min="0" max="1" required>
+            </fieldset>
+            <fieldset>
+                <legend>Otros</legend>
+                <textarea name="textarea" rows="10" cols="50"></textarea>
+            </fieldset>
+            <input type="number" id="btnsubmit">
+            <button  type="submit">A</button>
+            <button type="reset">Reset</button>
+        </form>
+        <img src="./resources/tabaco.jpeg">
+        <!-- readonly: hace que no se pueda insertar contenido tu manualmente, solo es para leer -->
+        <!-- max: Establece la longitud máxima que puede tener un número (y de regalo) min: Establece la longitud minima que puede tener un número -->
+        <!-- placeholder: pone un valor default a un input -->
+        <!-- autofocus: Cuando acceders al form automáticamente entras dandle click al input listo para escribir -->
+        <!-- required: Es obligatorio, no te deja enviar el form si x no tiene un valor -->
     </div>
 </body>
+
 </html>
