@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <form action="" method="get">
+
+        <fieldset>
+          <legend>Nombre</legend>
+          <input type="text" name="name" id="name" required>
+        </fieldset>
+    
+        <fieldset>
+          <legend>Fecha de nacimiento</legend>
+          <input type="date" name="born_date" id="born_date" required>
+        </fieldset>
+    
+        <fieldset>
+          <legend>Email</legend>
+          <input type="email" name="email" id="email" required>
+        </fieldset>
+    
+        <fieldset>
+          <legend>Contraseña</legend>
+          <input type="password" name="pass" id="pass" required>
+          <p id="pass_error"></p>
+        </fieldset>
+    
+        <fieldset>
+          <legend>Pelicula Favorita</legend>
+          <input list="movie_fav" id="movie_fav_input" name="movie_fav" required />
+          <datalist id="movie_fav">
+              <option value="El corredor de laberintos"></option>
+              <option value="Piratas del caribe"></option>
+              <option value="One Piece film red"></option>
+          </datalist>
+        </fieldset>
+    
+        <fieldset>
+          <legend>Generos de la pelicula favorita</legend>
+          <select name="select" multiple required>
+            <option value="accion">Acción</option>
+            <option value="romance">Romance</option>
+            <option value="terror">Terror</option>
+            <option value="humor">humor</option>
+            <option value="misterio">Misterio</option>
+            </select>
+        </fieldset>
+        
+        <button type="submit"></button>
+      </form>
+</body>
+</html>
